@@ -1,20 +1,55 @@
 # 🚀 ethermod
-
 <div align="center"> <img width="250px" src="ethermod-logo.png"></img> </div>
 
 ## 🗒️ Description
 - 🚀 [ethermod](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/tree/master/ethermod), is a [Linux](https://www.raspbian.org/) [npm](https://www.npmjs.com/) module for sending [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) magic packets to target machines with [Etherwake](https://www.mkssoftware.com/docs/man1/etherwake.1.asp) via their [MAC address](https://en.wikipedia.org/wiki/MAC_address).
 
 ## 🔧 Pre-requisites
-
 - [Linux](https://www.raspbian.org/)
 - [Node JS](https://nodejs.org/en)
 - [Etherwake](https://www.mkssoftware.com/docs/man1/etherwake.1.asp)
 - A target machine configured for [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN)
 
-## 🤓 Installing [Node JS](https://nodejs.org/en) on [Linux](https://www.raspbian.org/)
+## 🌐 Usage
+1. Clone the ethermod repository
 
-To install [Node JS](https://nodejs.org/en) on your Raspberry PI, type the following sequence of commands in the terminal:
+2. Run the ethermod module by entering the command:
+
+```bash
+node index.js [MAC ADDRESS1] [MAC ADDRESS2] [MAC ADDRESS3] … 
+```
+where <code>[MAC ADDRESS]</code> is the MAC address of the target machine. You may add arbitrarily many MAC addresses as required.
+
+- For example, to wake up a target machine with mac address <code>00:01:2e:a8:65:75</code> enter the command:
+
+```bash
+node index.js 00:01:2e:a8:65:75
+```
+
+- For example, to wake up 2 target machines, one with MAC address <code>00:01:2e:a8:65:75</code> and another with MAC address <code>b8:ae:ed:7e:ec:06</code> enter the command:
+
+```bash
+node index.js 00:01:2e:a8:65:75 b8:ae:ed:7e:ec:06
+```
+
+- Your target machines should now boot up, and you should see the following output:
+
+```bash
+wetouch@raspberrypi:~/nodejs-wake-on-lan-tests/ethermod $ node index.js 00:01:2e:a8:65:75 b8:ae:ed:7e:ec:06
+   ___ ______  __ __    ___  ____   ___ ___   ___   ___
+  /  _]      ||  |  |  /  _]|    \ |   |   | /   \ |   \
+ /  [_|      ||  |  | /  [_ |  D  )| _   _ ||     ||    \
+|    _]_|  |_||  _  ||    _]|    / |  \_/  ||  O  ||  D  |
+|   [_  |  |  |  |  ||   [_ |    \ |   |   ||     ||     |
+|     | |  |  |  |  ||     ||  .  \|   |   ||     ||     |
+|_____| |__|  |__|__||_____||__|\_||___|___| \___/ |_____|
+
+Sending magic packet to MAC Address: 00:01:2e:a8:65:75 ...
+Sending magic packet to MAC Address: b8:ae:ed:7e:ec:06 ...
+```
+
+## 🤓 Installing [Node JS](https://nodejs.org/en) on [Linux](https://www.raspbian.org/)
+- To install [Node JS](https://nodejs.org/en) on your Raspberry PI, type the following sequence of commands in the terminal:
 
 ```bash
 wget http://nodejs.org/dist/v6.2.1/node-v6.2.1-linux-armv6l.tar.gz
@@ -24,28 +59,37 @@ sudo cp -R * /usr/local/
 node -v
 npm -v
 ```
+
 ## 😎 Installing etherwake on Linux
 
 - To install [Etherwake](https://www.mkssoftware.com/docs/man1/etherwake.1.asp), a tool for sending [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) magic packets, type <code> sudo apt install etherwake </code> in the terminal.
 
-## 📶 Interfacing With Wake-On-Lan with Raspberry PI via ethermod
-
-- [Clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) ethermod from its [repository](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests)
-
-- Run the ethermod module by entering the command node index.js [MAC ADDRESS], where [MAC ADDRESS] is the [MAC address](https://en.wikipedia.org/wiki/MAC_address) of the target machine.
-
-- For example, to wake up a target machine with [MAC address](https://en.wikipedia.org/wiki/MAC_address) <code> 00:01:2e:a8:65:75 </code> enter the command 
 ```bash 
 node index.js 00:01:2e:a8:65:75
 ```
 
 ## 🤔  Common Issues
 
-I want to turn on a target machine using ethermod, but when I run it, I get an error akin to <code>SIOCGIFHWADDR on eth0 failed: No such device</code>
+- I want to turn on a target machine with ethermod, I followed the Ultimate Wake-On-LAN Tutorial but it is still not responding to Wake-on-LAN messages, or it is only responding to Wake-On-LAN messages when the machine is is in sleep mode and not when it is on powered off state
 
-The error message <code>SIOCGIFHWADDR on eth0 failed: No such device</code> indicates that the network interface <code>eth0</code> does not exist on your Raspberry Pi. You can check the available network interfaces on your Raspberry Pi by running the command <code>ifconfig -a</code>
+    - Here are the steps to update the Ethernet interface network drivers on a Windows machine Using Device Manager:
 
-Based on the output of the code ifconfig -a command, it seems that our Raspberry Pi has two network interfaces: Io (loopback) and wlan0 (wireless). The eth0 interface is not present, which is why you received the error message when trying to use it with the etherwake command. You can try using the wlan0 interface instead by specifying it with the -i option as following: sudo etherwake -i wlan0 [MAC ADDRESS]
+    1. Press the Windows key and type “Device Manager” in the search bar, then click on “Open”.
 
-## ❓ FAQ
+    2. In Device Manager, locate and expand the “Network adapters” category.
+
+    3. Right-click on your Ethernet interface network adapter and select “Update driver”.
+
+    4. In the “Update Drivers” window, select “Search automatically for updated driver software”.
+
+    5. Wait for Windows to search for and install any available updates for your Ethernet interface network adapter.
+
+    - That’s it! Your Ethernet interface network drivers should now be up-to-date.
+
+
+
+
+
+
+
 
