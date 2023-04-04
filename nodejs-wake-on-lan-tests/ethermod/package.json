@@ -1,0 +1,11 @@
+{
+  "name": "ethermod",
+  "version": "1.0.0",
+  "description": "npm module for running etherwake commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "author": "wetouch",
+  "license": "ISC"
+}
