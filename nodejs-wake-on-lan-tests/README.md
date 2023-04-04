@@ -4,7 +4,7 @@ Easy [Node JS](https://nodejs.org/en) control for testing communication with [Wa
 
 ## 🔧 Pre-requisites
 
-- To use Wake-On-Lan, you need to configure the target machine to enable this feature, settings may vary depending on the target machine. Follow the Ultimate Wake-On-LAN Tutorial for more details: 
+- To use [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN), you need to configure the target machine to enable this feature, settings may vary depending on the target machine. Follow the [Ultimate Wake-On-LAN Tutorial](https://docs.technotim.live/posts/wake-on-lan/) for more details: 
 
 ## 🪛 Tools
 
@@ -16,39 +16,39 @@ Easy [Node JS](https://nodejs.org/en) control for testing communication with [Wa
 
 **Q. How do I find the IP address of a device on my network?**
 
-A. On Windows, open the Command Prompt or PowerShell and type ipconfig . Your local IP address will be displayed next to IPv4 Address under the section of your network adapter
+A. On Windows, open the Command Prompt or PowerShell and type <code>ipconfig</code> . Your local IP address will be displayed next to `IPv4 Address` under the section of your network adapter
 
-On Linux, You can find your local IP address on Linux by opening a terminal and typing ip addr show. Your local IP address will be displayed next to inet under the section of your network interface.
+On Linux, You can find your local IP address on Linux by opening a terminal and typing <code>ip addr show</code>. Your local IP address will be displayed next to `inet` under the section of your network interface.
 
 **Q. How do I find the [MAC address](https://en.wikipedia.org/wiki/MAC_address) of a device on my network?**
 
-A. On Windows, you can find your [MAC address](https://en.wikipedia.org/wiki/MAC_address) on Windows by opening the Command Prompt or PowerShell and typing <code> ipconfig /all </code> . Your [MAC address](https://en.wikipedia.org/wiki/MAC_address)will be displayed next to Physical Address under the section of your network adapter.
+A. On Windows, you can find your [MAC address](https://en.wikipedia.org/wiki/MAC_address) on Windows by opening the Command Prompt or PowerShell and typing <code>ipconfig /all</code> . Your [MAC address](https://en.wikipedia.org/wiki/MAC_address) will be displayed next to `Physical Address` under the section of your network adapter.
 
-On [Linux](https://www.raspbian.org/), you can find your [MAC address](https://en.wikipedia.org/wiki/MAC_address) on [Linux](https://www.raspbian.org/) by opening a terminal and typing <code> ip addr show </code> . Your [MAC address](https://en.wikipedia.org/wiki/MAC_address) will be displayed next to link/ether under the section of your network interface.
+On [Linux](https://www.raspbian.org/), you can find your [MAC address](https://en.wikipedia.org/wiki/MAC_address) on [Linux](https://www.raspbian.org/) by opening a terminal and typing <code> ip addr show </code> . Your [MAC address](https://en.wikipedia.org/wiki/MAC_address) will be displayed next to `link/ether` under the section of your network interface.
 
 **Q. How do I delete the leftover Node JS installation package files on the Raspberry PI?**
 
-A. To remove a file on Linux, you can use the rm  command followed by the filename you want to delete. For example, if you want to delete a file named node-v6.2.1-linux-armv6l.tar.gz , you can use the command rm node-v6.2.1-linux-armv6l.tar.gz .
+A. To remove a file on Linux, you can use the <code>rm</code> command followed by the filename you want to delete. For example, if you want to delete a file named `node-v6.2.1-linux-armv6l.tar.gz` , you can use the command <code>rm node-v6.2.1-linux-armv6l.tar.gz</code> .
 
-If you want to remove a directory and all its contents, you can use the command i rm -r dirname .
+If you want to remove a directory and all its contents, you can use the command <code>i rm -r dirname</code> .
 
-Be careful when using the rm command because it deletes files permanently and they cannot be easily recovered.
+_Be careful when using the rm command because it deletes files permanently and they cannot be easily recovered._
 
 **Q. How do I transfer a script I wrote in VS code to the Raspberry PI?**
 
-A. You can copy over files from your windows machine to the Raspberry PI with the command scp [PATH_TO_FILE] [TARGET_DESTINATION]
-For example, if I want to transfer the file index.js from my windows machine to the ethermod folder in the Raspberry PI, type the command: 
-scp index.js wetouch@raspberrypi:/~ethermod.
+A. You can copy over files from your windows machine to the Raspberry PI with the command <code>scp [PATH_TO_FILE] [TARGET_DESTINATION]</code>
+For example, if I want to transfer the file `index.js` from my windows machine to the ethermod folder in the Raspberry PI, type the command: 
+<code>scp index.js wetouch@raspberrypi:/~ethermod</code> .
 
 **Q. How do I create an npm module from scratch, for sending etherwake commands to a target machine?**
 
-A. To write an etherwake npm module for the Raspberry PI (Let's call it ethermod), start by creating a directory called ethermod by entering the command mkdir ethermod in the terminal.
+A. To write an etherwake npm module for the Raspberry PI (Let's call it ethermod), start by creating a directory called ethermod by entering the command: <code>mkdir ethermod</code> in the terminal.
 
-Navigate to the new directory by entering the command cd ethermod.
+Navigate to the new directory by entering the command: <code>cd ethermod</code>.
 
-Enter the command npm init to start creating the npm module. After going through the init wizard, your package.json should look something like this.
+Enter the command <code>npm init</code> to start creating the npm module. After going through the init wizard, `your package.json` should look something like [this](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/blob/master/ethermod/package.json).
 
-Write the node JS script for sending the etherwake command as required, use nano index.js to edit the script in the linux terminal, or write the script in VS code and copy it over to the Raspberry PI with the command scp index.js wetouch@raspberrypi:/~ethermod. Your index.js should look something like this.
+Write the node JS script for sending the etherwake command as required (use nano index.js to edit the script in the linux terminal, or write the script in VS code) and copy it over to the Raspberry PI with the command: <code>scp index.js wetouch@raspberrypi:/~ethermod</code>. Your `index.js` should look something like [this](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/blob/master/ethermod/index.js).
 
 ## 🤔  Common Issues
 - I want to ping a Windows Device, but it is not responding to my ping requests
