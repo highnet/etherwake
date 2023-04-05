@@ -46,7 +46,7 @@ A. To write an etherwake npm module for the Raspberry PI (Let's call it ethermod
 
 Navigate to the new directory by entering the command: <code>cd ethermod</code>.
 
-Enter the command <code>npm init</code> to start creating the npm module. After going through the init wizard, your package.json` should look something like [this](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/blob/master/ethermod/package.json).
+Enter the command <code>npm init</code> to start creating the npm module. After going through the init wizard, your `package.json` should look something like [this](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/blob/master/ethermod/package.json).
 
 Write the node JS script for sending the etherwake command as required (use nano index.js to edit the script in the linux terminal, or write the script in VS code) and copy it over to the Raspberry PI with the command: <code>scp index.js wetouch@raspberrypi:/~ethermod</code>. Your `index.js` should look something like [this](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/blob/master/ethermod/index.js).
 
