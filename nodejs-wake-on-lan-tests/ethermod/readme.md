@@ -2,7 +2,7 @@
 <div align="center"> <img width="250px" src="ethermod-logo.png"></img> </div>
 
 ## 🗒️ Description
-- 🚀 [ethermod](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/tree/master/ethermod), is a [Linux](https://www.raspbian.org/) [npm](https://www.npmjs.com/) module for sending [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) magic packets to target machines with [Etherwake](https://www.mkssoftware.com/docs/man1/etherwake.1.asp) via their [MAC address](https://en.wikipedia.org/wiki/MAC_address).
+- 🚀 [ethermod](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/tree/master/ethermod) is a [Linux](https://www.raspbian.org/) [npm](https://www.npmjs.com/) module for sending [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) magic packets to target machines with [Etherwake](https://www.mkssoftware.com/docs/man1/etherwake.1.asp) via their [MAC address](https://en.wikipedia.org/wiki/MAC_address).
 
 ## 🔧 Pre-requisites
 - [Linux](https://www.raspbian.org/)
@@ -11,7 +11,7 @@
 - A target machine configured for [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN)
 
 ## 🌐 Usage
-1. [Clone](https://learn.hibbittsdesign.org/gitlab-githubdesktop/cloning-a-gitlab-repo) the ethermod [repository](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/tree/master/ethermod)
+1. [Clone](https://learn.hibbittsdesign.org/gitlab-githubdesktop/cloning-a-gitlab-repo) the ethermod [repository](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/tree/master/ethermod).
 
 2. Run the ethermod module by entering the command:
 
@@ -20,13 +20,13 @@ node index.js [MAC ADDRESS1] [MAC ADDRESS2] [MAC ADDRESS3] …
 ```
 where <code>[MAC ADDRESS]</code> is the MAC address of the target machine. You may add arbitrarily as many [MAC addresses](https://en.wikipedia.org/wiki/MAC_address) as required.
 
-- For example, to wake up a target machine with mac address <code>00:01:2e:a8:65:75</code> enter the command:
+- For example, to wake up a target machine with mac address <code>00:01:2e:a8:65:75</code> , enter the command:
 
 ```bash
 node index.js 00:01:2e:a8:65:75
 ```
 
-- For example, to wake up 2 target machines, one with [MAC address](https://en.wikipedia.org/wiki/MAC_address) <code>00:01:2e:a8:65:75</code> and another with [MAC address](https://en.wikipedia.org/wiki/MAC_address) <code>b8:ae:ed:7e:ec:06</code> enter the command:
+- For example, to wake up two target machines, one with [MAC address](https://en.wikipedia.org/wiki/MAC_address) <code>00:01:2e:a8:65:75</code> and another with [MAC address](https://en.wikipedia.org/wiki/MAC_address) <code>b8:ae:ed:7e:ec:06</code> , enter the command:
 
 ```bash
 node index.js 00:01:2e:a8:65:75 b8:ae:ed:7e:ec:06
@@ -70,11 +70,11 @@ node index.js 00:01:2e:a8:65:75
 
 ## 🤔  Common Issues
 
-- I want to turn on a target machine with ethermod, I followed the [Ultimate Wake-On-LAN Tutorial](https://docs.technotim.live/posts/wake-on-lan/) but it is still not responding to [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) messages, or it is only responding to [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) messages when the machine is in sleep mode and not when it is on powered off state
+- I want to turn on a target machine with ethermod. I followed the [Ultimate Wake-On-LAN Tutorial](https://docs.technotim.live/posts/wake-on-lan/), but it is still not responding to [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) messages or it is only responding to [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) messages when the machine is in sleep mode and not when it is on powered off state.
 
     - Here are the steps to update the Ethernet interface network drivers on a Windows machine Using Device Manager:
 
-    1. Press the Windows key and type “Device Manager” in the search bar, then click on “Open”.
+    1. Press the Windows key and type “Device Manager” in the search bar. Then, click on “Open”.
 
     2. In Device Manager, locate and expand the “Network adapters” category.
 
