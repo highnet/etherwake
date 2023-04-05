@@ -70,7 +70,7 @@ node index.js 00:01:2e:a8:65:75
 
 ## 🤔  Common Issues
 
-- I want to turn on a target machine with ethermod, I followed the [Ultimate Wake-On-LAN Tutorial](https://docs.technotim.live/posts/wake-on-lan/) but it is still not responding to [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) messages, or it is only responding to [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) messages when the machine is is in sleep mode and not when it is on powered off state
+- I want to turn on a target machine with ethermod, I followed the [Ultimate Wake-On-LAN Tutorial](https://docs.technotim.live/posts/wake-on-lan/) but it is still not responding to [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) messages, or it is only responding to [Wake-On-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) messages when the machine is in sleep mode and not when it is on powered off state
 
     - Here are the steps to update the Ethernet interface network drivers on a Windows machine Using Device Manager:
 
