@@ -36,22 +36,22 @@ _Be careful when using the rm command because it deletes files permanently and t
 
 **Q. How do I transfer a script I wrote in VS code to the Raspberry PI?**
 
-A. You can copy over files from your windows machine to the Raspberry PI with the command <code>scp [PATH_TO_FILE] [TARGET_DESTINATION]</code>
+A. You can copy over files from your windows machine to the Raspberry PI with the command <code>scp [PATH_TO_FILE] [TARGET_DESTINATION]</code> .
 For example, if I want to transfer the file `index.js` from my windows machine to the ethermod folder in the Raspberry PI, type the command: 
 <code>scp index.js wetouch@raspberrypi:/~ethermod</code> .
 
 **Q. How do I create an npm module from scratch, for sending etherwake commands to a target machine?**
 
-A. To write an etherwake npm module for the Raspberry PI (Let's call it ethermod), start by creating a directory called ethermod by entering the command: <code>mkdir ethermod</code> in the terminal.
+A. To write an etherwake npm module for the Raspberry PI (let's call it ethermod), start by creating a directory called ethermod by entering the command: <code>mkdir ethermod</code> in the terminal.
 
 Navigate to the new directory by entering the command: <code>cd ethermod</code>.
 
 Enter the command <code>npm init</code> to start creating the npm module. After going through the init wizard, your `package.json` should look something like [this](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/blob/master/ethermod/package.json).
 
-Write the node JS script for sending the etherwake command as required (use nano index.js to edit the script in the linux terminal, or write the script in VS code) and copy it over to the Raspberry PI with the command: <code>scp index.js wetouch@raspberrypi:/~ethermod</code>. Your `index.js` should look something like [this](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/blob/master/ethermod/index.js).
+Write the node JS script for sending the etherwake command as required (use nano index.js to edit the script in the linux terminal or write the script in VS code) and copy it over to the Raspberry PI with the command: <code>scp index.js wetouch@raspberrypi:/~ethermod</code>. Your `index.js` should look something like [this](https://gitlab.wetouch.at/playground/nodejs-wake-on-lan-tests/-/blob/master/ethermod/index.js).
 
 ## 🤔  Common Issues
-- I want to ping a Windows Device, but it is not responding to my ping requests
+- I want to ping a Windows Device, but it is not responding to my ping requests.
 
     1. To check the firewall settings on a Windows machine to make sure it is not blocking incoming ping requests, you can follow these steps:
 
@@ -65,9 +65,9 @@ Write the node JS script for sending the etherwake command as required (use nano
 
     - This should allow incoming ping requests through the Windows Defender Firewall. If you are using a different firewall program, the steps to allow incoming ping requests may be different.
 
-    - I want to turn on a target machine using etherwake, but when I run it, I get an error akin to <code>SIOCGIFHWADDR on eth0 failed: No such device</code>
+- I want to turn on a target machine using etherwake but when I run it, I get an error akin to <code>SIOCGIFHWADDR on eth0 failed: No such device</code>
 
-    - The error message <code>SIOCGIFHWADDR on eth0 failed: No such device</code> indicates that the network interface <code>eth0</code> does not exist on your Raspberry Pi. You can check the available network interfaces on your Raspberry Pi by running the command <code>ifconfig -a</code>
+    - The error message <code>SIOCGIFHWADDR on eth0 failed: No such device</code> indicates that the network interface <code>eth0</code> does not exist on your Raspberry Pi. You can check the available network interfaces on your Raspberry Pi by running the command <code>ifconfig -a</code> .
 
     - Based on the output of the code ifconfig -a command, it seems that our Raspberry Pi has two network interfaces: <code>Io</code> (loopback) and <code>wlan0</code> (wireless). The <code>eth0</code> interface is not present, which is why you received the error message when trying to use it with the etherwake command. You can try using the <code>wlan0</code> interface instead by specifying it with the <code>-i</code> option as following: 
 
